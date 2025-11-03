@@ -12,7 +12,6 @@ export const LandingPage = () => {
 
   const { downloadCSV } = useDownloadData();
 
-
   const scrollToTop = () => {
     let scrollStep = -window.scrollY / 30;
     let scrollInterval = setInterval(() => {
@@ -110,7 +109,6 @@ export const LandingPage = () => {
           </p>
         </div>
       </section>
-
       <section className="systematic-disparity-section flex-c gap-12 ">
         <div className="systematic-disparity-section-header">
           <h3 className="text-5xl font-serif">Systemic Disparity Insights</h3>
@@ -148,9 +146,6 @@ export const LandingPage = () => {
           </div>
         </div>
       </section>
-      {/*
-        Read more CTA: routes to the Human Rights First website for additional context.
-      */}
       <section className="read-more-section">
         <button
           className="primary-c text-white px-4 py-2 hover:bg-[#666111]"
@@ -160,9 +155,6 @@ export const LandingPage = () => {
           Read More
         </button>
       </section>
-      {/*
-        Back to top utility: returns the viewport to the top of the page.
-      */}
       <section className="back-to-top-section p-14">
         <button
           className="back-to-top-button"
