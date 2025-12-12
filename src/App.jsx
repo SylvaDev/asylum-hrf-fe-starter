@@ -6,6 +6,7 @@ import { NotFoundPage } from './components/pages/NotFound/index.jsx';
 import * as React from 'react';
 import Profile from './components/pages/Profile/index.jsx';
 import { pageWrapper } from './components/layout/PageWrapper.jsx';
+import { Auth0ProviderWithConfig } from './auth/auth0-provider-with-config.jsx';
 
 const router = createBrowserRouter([
   {
@@ -25,10 +26,12 @@ const router = createBrowserRouter([
   },
 ]);
 
-export const App = () => {
+export const App = ({ domain, clientId }) => {
   return (
     <div className='font-serif w-[100vw] h-[100vh] m-0 flex-c justify-between align-centre text-center min-h-screen secondary-c'>
-      <RouterProvider router={router} />
+      <Auth0ProviderWithConfig domain={domain} clientId={clientId}>
+        <RouterProvider router={router} />
+      </Auth0ProviderWithConfig>
     </div>
   );
 };
