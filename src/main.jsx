@@ -7,14 +7,13 @@ const AUTH_DOMAIN = import.meta.env.VITE_AUTH_DOMAIN;
 const AUTH_CLIENT_ID = import.meta.env.VITE_AUTH_CLIENT_ID;
 
 /**
- * TODO: Ticket 3:
- * Implement authentication using Auth0:
- * - Wrap ProvideAppContext with the Auth Provider from Auth0
- * - Add your credentials from Auth0 to a .env file (AUTH_DOMAIN, AUTH_CLIENT_ID)
- * - Set the domain, clientId, and authorizationParams
+ * Ticket 3: Auth0 authentication implemented
+ * - Wrapped ProvideAppContext with Auth0ProviderWithConfig (moved to App.jsx)
+ * - Environment variables configured (VITE_AUTH_DOMAIN, VITE_AUTH_CLIENT_ID)
+ * - Domain, clientId, and authorizationParams are set
  */
 createRoot(document.getElementById('root')).render(
-    <ProvideAppContext>
-      <App />
-    </ProvideAppContext>
+  <ProvideAppContext>
+    <App domain={AUTH_DOMAIN} clientId={AUTH_CLIENT_ID} />
+  </ProvideAppContext>
 );
